@@ -249,7 +249,7 @@ ul {
   border: 0;
   background: none;
   color: var(--brand-d);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 14px;
   white-space: nowrap;
   border-bottom: 2px solid transparent;
@@ -267,7 +267,7 @@ ul {
 .dd-btn[aria-expanded="true"] {
   border-bottom-color: var(--brand);
   color: var(--brand);
-  font-weight: 500
+  font-weight: 600
 }
 
 .badge {
