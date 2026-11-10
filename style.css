@@ -9,7 +9,8 @@
   --brand: #1450d6;
   --brand-d: #0b3aa6;
   --brand-l: #eaf0fe;
-  --danger: #e5252a;        /* red indicators (Classrooms, Groups) */
+  --danger: #e5252a;
+  /* red indicators (Classrooms, Groups) */
   --gold: #ffc83d;
   --side: #fff;
   --nav: #fff;
@@ -24,10 +25,14 @@
 }
 
 @supports (height: 100dvh) {
-  :root { --vh: 100dvh }
+  :root {
+    --vh: 100dvh
+  }
 }
 
-* { box-sizing: border-box }
+* {
+  box-sizing: border-box
+}
 
 html {
   height: 100%;
@@ -53,17 +58,53 @@ body {
   -webkit-touch-callout: none
 }
 
-input, textarea, select { -webkit-user-select: text; user-select: text }
-img, svg, video { max-width: 100% }
-img { -webkit-user-drag: none; height: auto }
-a { color: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent }
-button { font: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent }
-ul { list-style: none; margin: 0; padding: 0 }
-:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px }
+input,
+textarea,
+select {
+  -webkit-user-select: text;
+  user-select: text
+}
+
+img,
+svg,
+video {
+  max-width: 100%
+}
+
+img {
+  -webkit-user-drag: none;
+  height: auto
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px
+}
 
 .nav-link:focus:not(:focus-visible),
 .side a:focus:not(:focus-visible),
-.bnav a:focus:not(:focus-visible) { outline: none; box-shadow: none }
+.bnav a:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none
+}
 
 /* ---------- Top header ---------- */
 .top {
@@ -90,8 +131,19 @@ ul { list-style: none; margin: 0; padding: 0 }
   white-space: nowrap
 }
 
-.logo span { min-width: 0; overflow: hidden; text-overflow: ellipsis }
-.logo img { width: 38px; height: 38px; object-fit: contain; display: block; flex: none }
+.logo span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+.logo img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  display: block;
+  flex: none
+}
 
 .search {
   flex: 1;
@@ -118,7 +170,13 @@ ul { list-style: none; margin: 0; padding: 0 }
   text-overflow: ellipsis
 }
 
-.actions { display: flex; gap: 8px; align-items: center; margin-left: auto; flex: none }
+.actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-left: auto;
+  flex: none
+}
 
 .pill {
   display: inline-flex;
@@ -136,11 +194,19 @@ ul { list-style: none; margin: 0; padding: 0 }
   transition: background .15s
 }
 
-.pill:hover { background: var(--brand-d) }
+.pill:hover {
+  background: var(--brand-d)
+}
 
 /* Register = filled, Login = outlined */
-.actions .pill:first-child { background: var(--brand-l); color: var(--brand) }
-.actions .pill:first-child:hover { background: #dbe6fd }
+.actions .pill:first-child {
+  background: var(--brand-l);
+  color: var(--brand)
+}
+
+.actions .pill:first-child:hover {
+  background: #dbe6fd
+}
 
 .btn {
   border: 0;
@@ -152,8 +218,14 @@ ul { list-style: none; margin: 0; padding: 0 }
   transition: background .15s
 }
 
-.btn:hover { background: var(--brand-d) }
-.btn.ghost { background: var(--brand-l); color: var(--brand) }
+.btn:hover {
+  background: var(--brand-d)
+}
+
+.btn.ghost {
+  background: var(--brand-l);
+  color: var(--brand)
+}
 
 /* ---------- Main nav bar ---------- */
 .navbar {
@@ -177,8 +249,14 @@ ul { list-style: none; margin: 0; padding: 0 }
   -webkit-overflow-scrolling: touch
 }
 
-.menu::-webkit-scrollbar { display: none }
-.menu > li { flex: none; position: relative }
+.menu::-webkit-scrollbar {
+  display: none
+}
+
+.menu>li {
+  flex: none;
+  position: relative
+}
 
 .nav-link {
   display: flex;
@@ -197,9 +275,14 @@ ul { list-style: none; margin: 0; padding: 0 }
   transition: color .15s, background .15s
 }
 
-.nav-link:hover, .has-dd:hover > .dd-btn { color: var(--brand); background: var(--brand-l) }
+.nav-link:hover,
+.has-dd:hover>.dd-btn {
+  color: var(--brand);
+  background: var(--brand-l)
+}
 
-.nav-link.on, .dd-btn[aria-expanded="true"] {
+.nav-link.on,
+.dd-btn[aria-expanded="true"] {
   border-bottom-color: var(--brand);
   color: var(--brand)
 }
@@ -223,7 +306,9 @@ ul { list-style: none; margin: 0; padding: 0 }
   box-shadow: 0 0 0 2px var(--surface)
 }
 
-.dd-btn .badge { right: 22px }
+.dd-btn .badge {
+  right: 22px
+}
 
 .chev {
   width: 6px;
@@ -235,7 +320,9 @@ ul { list-style: none; margin: 0; padding: 0 }
   transition: transform .15s
 }
 
-.dd-btn[aria-expanded="true"] .chev { transform: rotate(-135deg) translateY(-2px) }
+.dd-btn[aria-expanded="true"] .chev {
+  transform: rotate(-135deg) translateY(-2px)
+}
 
 .dd {
   position: fixed;
@@ -252,7 +339,9 @@ ul { list-style: none; margin: 0; padding: 0 }
   padding: 6px
 }
 
-.dd[hidden] { display: none }
+.dd[hidden] {
+  display: none
+}
 
 .dd a {
   display: block;
@@ -263,10 +352,17 @@ ul { list-style: none; margin: 0; padding: 0 }
   color: var(--ink)
 }
 
-.dd a:hover, .dd a:focus-visible { background: var(--brand-l); color: var(--brand) }
+.dd a:hover,
+.dd a:focus-visible {
+  background: var(--brand-l);
+  color: var(--brand)
+}
 
 /* ---------- Layout ---------- */
-.shell { display: flex; min-height: calc(var(--vh) - 112px) }
+.shell {
+  display: flex;
+  min-height: calc(var(--vh) - 112px)
+}
 
 .side {
   width: 84px;
@@ -282,9 +378,12 @@ ul { list-style: none; margin: 0; padding: 0 }
   scrollbar-width: none
 }
 
-.side::-webkit-scrollbar { display: none }
+.side::-webkit-scrollbar {
+  display: none
+}
 
-.side svg, .bnav svg {
+.side svg,
+.bnav svg {
   width: 22px;
   height: 22px;
   fill: none;
@@ -305,7 +404,9 @@ ul { list-style: none; margin: 0; padding: 0 }
   color: var(--muted)
 }
 
-.side a:hover { color: var(--brand) }
+.side a:hover {
+  color: var(--brand)
+}
 
 .side a span {
   width: 42px;
@@ -316,10 +417,24 @@ ul { list-style: none; margin: 0; padding: 0 }
   transition: background .15s
 }
 
-.side a:hover span { background: var(--brand-l) }
-.side a.on { color: var(--brand) }
-.side a.on span { background: var(--brand-l); color: var(--brand) }
-.side hr { border: 0; border-top: 1px solid var(--line); margin: 8px 18px }
+.side a:hover span {
+  background: var(--brand-l)
+}
+
+.side a.on {
+  color: var(--brand)
+}
+
+.side a.on span {
+  background: var(--brand-l);
+  color: var(--brand)
+}
+
+.side hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 8px 18px
+}
 
 main {
   flex: 1;
@@ -345,7 +460,10 @@ main {
   line-height: 1.4
 }
 
-.notice p { margin: 0; min-width: 0 }
+.notice p {
+  margin: 0;
+  min-width: 0
+}
 
 .notice-ic {
   width: 26px;
@@ -390,10 +508,22 @@ main {
   transition: transform .15s
 }
 
-.ban:hover { transform: translateY(-2px) }
-.ban:nth-child(2) { background: #0e7a6b }
-.ban:nth-child(3) { background: #5b3bc4 }
-.ban b { font-size: 15px; line-height: 1.25 }
+.ban:hover {
+  transform: translateY(-2px)
+}
+
+.ban:nth-child(2) {
+  background: #0e7a6b
+}
+
+.ban:nth-child(3) {
+  background: #5b3bc4
+}
+
+.ban b {
+  font-size: 15px;
+  line-height: 1.25
+}
 
 .ban span {
   grid-column: 1;
@@ -427,7 +557,12 @@ main {
   align-items: start
 }
 
-.left { display: flex; flex-direction: column; gap: 24px; min-width: 0 }
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0
+}
 
 .card {
   background: var(--surface);
@@ -449,11 +584,21 @@ main {
   gap: 10px
 }
 
-.card h2 a { font-size: 13px; color: var(--brand); font-weight: 600; white-space: nowrap }
-.card h2 a:hover { text-decoration: underline }
+.card h2 a {
+  font-size: 13px;
+  color: var(--brand);
+  font-weight: 600;
+  white-space: nowrap
+}
+
+.card h2 a:hover {
+  text-decoration: underline
+}
 
 /* ---------- Take a test ---------- */
-#test h2 { margin-bottom: 14px }
+#test h2 {
+  margin-bottom: 14px
+}
 
 .tests {
   display: grid;
@@ -472,7 +617,10 @@ main {
   transition: border-color .15s, box-shadow .15s
 }
 
-.test:hover { border-color: var(--brand); box-shadow: 0 4px 14px rgba(20, 80, 214, .1) }
+.test:hover {
+  border-color: var(--brand);
+  box-shadow: 0 4px 14px rgba(20, 80, 214, .1)
+}
 
 .test i {
   width: 46px;
@@ -484,8 +632,17 @@ main {
   background: var(--brand-l)
 }
 
-.test i img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 50% }
-.test div { min-width: 0 }
+.test i img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%
+}
+
+.test div {
+  min-width: 0
+}
 
 .test b {
   display: block;
@@ -504,7 +661,13 @@ main {
 }
 
 /* ---------- Your Feed ---------- */
-.feed-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px }
+.feed-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px
+}
 
 .feed-head h2 {
   margin: 0;
@@ -528,8 +691,18 @@ main {
   transition: background .15s
 }
 
-.feed-btn:hover { background: var(--brand-l) }
-.feed-btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round }
+.feed-btn:hover {
+  background: var(--brand-l)
+}
+
+.feed-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round
+}
 
 .feed-card {
   background: var(--surface);
@@ -539,9 +712,23 @@ main {
   box-shadow: var(--shadow)
 }
 
-.feed-lead { margin: 0 0 16px; font-size: 15px; font-weight: 500; color: var(--muted) }
-.feed-fields { display: grid; grid-template-columns: 1fr 2fr; gap: 12px }
-.sel { position: relative; min-width: 0 }
+.feed-lead {
+  margin: 0 0 16px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--muted)
+}
+
+.feed-fields {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 12px
+}
+
+.sel {
+  position: relative;
+  min-width: 0
+}
 
 .sel select {
   width: 100%;
@@ -560,10 +747,26 @@ main {
   transition: border-color .15s, box-shadow .15s
 }
 
-.sel select:hover { border-color: #9aa8c3 }
-.sel select:focus-visible { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px var(--brand-l) }
-.sel select:disabled { background-color: #f2f4f8; color: #98a2b6; cursor: not-allowed; border-color: var(--line) }
-.sel-exam { grid-column: 1 / 2 }
+.sel select:hover {
+  border-color: #9aa8c3
+}
+
+.sel select:focus-visible {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px var(--brand-l)
+}
+
+.sel select:disabled {
+  background-color: #f2f4f8;
+  color: #98a2b6;
+  cursor: not-allowed;
+  border-color: var(--line)
+}
+
+.sel-exam {
+  grid-column: 1 / 2
+}
 
 .go {
   grid-column: 2 / 3;
@@ -579,10 +782,23 @@ main {
   transition: background .15s
 }
 
-.go:hover:not(:disabled) { background: var(--brand-d) }
-.go:disabled { background: #e9edf4; color: #98a2b6; cursor: not-allowed }
+.go:hover:not(:disabled) {
+  background: var(--brand-d)
+}
 
-.feed-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 18px }
+.go:disabled {
+  background: #e9edf4;
+  color: #98a2b6;
+  cursor: not-allowed
+}
+
+.feed-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px
+}
 
 .chip {
   display: inline-flex;
@@ -598,12 +814,30 @@ main {
   transition: background .15s
 }
 
-.chip:hover { background: var(--brand-l) }
-.chip svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round }
-.chip-red { color: var(--brand); border-color: #b9cdf7 }
+.chip:hover {
+  background: var(--brand-l)
+}
+
+.chip svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round
+}
+
+.chip-red {
+  color: var(--brand);
+  border-color: #b9cdf7
+}
 
 /* ---------- Upcoming events ---------- */
-.events { padding: 0; overflow: hidden }
+.events {
+  padding: 0;
+  overflow: hidden
+}
 
 .events h2 {
   margin: 0;
@@ -612,9 +846,29 @@ main {
   font-family: "Inter", system-ui, sans-serif
 }
 
-.ev-title { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 700; color: var(--ink) }
-.ev-title svg { width: 20px; height: 20px; fill: none; stroke: var(--brand); stroke-width: 2; stroke-linecap: round }
-.events h2 a { color: var(--brand); font-weight: 600; font-size: 13px }
+.ev-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink)
+}
+
+.ev-title svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: var(--brand);
+  stroke-width: 2;
+  stroke-linecap: round
+}
+
+.events h2 a {
+  color: var(--brand);
+  font-weight: 600;
+  font-size: 13px
+}
 
 .ev {
   display: block;
@@ -625,9 +879,19 @@ main {
   margin: 12px 16px
 }
 
-.ev:last-child { margin-bottom: 16px }
-.ev-top { display: flex; gap: 14px; align-items: flex-start }
-.ev-top > div { min-width: 0 }
+.ev:last-child {
+  margin-bottom: 16px
+}
+
+.ev-top {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start
+}
+
+.ev-top>div {
+  min-width: 0
+}
 
 .cal {
   width: 52px;
@@ -640,7 +904,12 @@ main {
   place-items: center
 }
 
-.cal em { font-style: normal; font-weight: 700; font-size: 20px; line-height: 1 }
+.cal em {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1
+}
 
 .ev-tag {
   display: inline-block;
@@ -663,13 +932,42 @@ main {
   font-weight: 600
 }
 
-.ev-foot { display: flex; align-items: center; gap: 12px; margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line) }
-.ev-date { font-size: 13px; color: var(--muted) }
-.ev-cm { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); padding-left: 12px; border-left: 1px solid var(--line) }
-.ev-cm svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8 }
+.ev-foot {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line)
+}
+
+.ev-date {
+  font-size: 13px;
+  color: var(--muted)
+}
+
+.ev-cm {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--muted);
+  padding-left: 12px;
+  border-left: 1px solid var(--line)
+}
+
+.ev-cm svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8
+}
 
 /* ---------- Store / lists ---------- */
-.sec { margin-top: 28px }
+.sec {
+  margin-top: 28px
+}
 
 .row {
   display: grid;
@@ -689,7 +987,10 @@ main {
   transition: border-color .15s, box-shadow .15s
 }
 
-.item:hover { border-color: #b9cdf7; box-shadow: 0 4px 14px rgba(20, 80, 214, .08) }
+.item:hover {
+  border-color: #b9cdf7;
+  box-shadow: 0 4px 14px rgba(20, 80, 214, .08)
+}
 
 .item .pdf {
   width: 38px;
@@ -703,7 +1004,11 @@ main {
   color: var(--brand)
 }
 
-.item b { font-size: 14.5px; line-height: 1.4; font-weight: 600 }
+.item b {
+  font-size: 14.5px;
+  line-height: 1.4;
+  font-weight: 600
+}
 
 .tag {
   align-self: flex-start;
@@ -715,8 +1020,17 @@ main {
   border-radius: 99px
 }
 
-.item div { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: auto }
-.item strong { font-size: 16px }
+.item div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto
+}
+
+.item strong {
+  font-size: 16px
+}
 
 .item button {
   border: 0;
@@ -730,7 +1044,9 @@ main {
   transition: background .15s
 }
 
-.item button:hover { background: var(--brand-d) }
+.item button:hover {
+  background: var(--brand-d)
+}
 
 .cta {
   margin-top: 28px;
@@ -744,17 +1060,62 @@ main {
   flex-wrap: wrap
 }
 
-.cta h3 { margin: 0 0 4px; font-size: 19px }
-.cta p { margin: 0; color: var(--muted) }
-.cta-blue { background: var(--brand); color: #fff }
-.cta-blue p { color: #dbe6ff }
-.cta-info { display: flex; align-items: center; gap: 14px; min-width: 0 }
-.cta-logo { width: 54px; height: 54px; object-fit: contain; flex: none; border-radius: var(--r-md) }
-.cta-btns { display: flex; gap: 10px; flex-wrap: wrap }
-.btn-white { background: #fff; color: var(--brand-d) }
-.btn-white:hover { background: var(--brand-l) }
-.btn-dark { background: var(--brand-d) }
-.btn-dark:hover { background: #082b80 }
+.cta h3 {
+  margin: 0 0 4px;
+  font-size: 19px
+}
+
+.cta p {
+  margin: 0;
+  color: var(--muted)
+}
+
+.cta-blue {
+  background: var(--brand);
+  color: #fff
+}
+
+.cta-blue p {
+  color: #dbe6ff
+}
+
+.cta-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0
+}
+
+.cta-logo {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  flex: none;
+  border-radius: var(--r-md)
+}
+
+.cta-btns {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap
+}
+
+.btn-white {
+  background: #fff;
+  color: var(--brand-d)
+}
+
+.btn-white:hover {
+  background: var(--brand-l)
+}
+
+.btn-dark {
+  background: var(--brand-d)
+}
+
+.btn-dark:hover {
+  background: #082b80
+}
 
 footer {
   margin-top: 44px;
@@ -767,52 +1128,162 @@ footer {
   color: var(--muted)
 }
 
-footer b { color: var(--ink); display: block; margin-bottom: 8px }
-footer a { display: block; padding: 3px 0 }
-footer a:hover { color: var(--brand) }
-.fbrand { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px }
-.fbrand img { width: 36px; height: 36px; object-fit: contain; flex: none }
-.fbrand p { margin: 2px 0 0 }
-.fbrand b { margin-bottom: 0 }
-.copy { grid-column: 1 / -1; text-align: center; font-size: 12px; padding-top: 10px }
-.bnav { display: none }
+footer b {
+  color: var(--ink);
+  display: block;
+  margin-bottom: 8px
+}
+
+footer a {
+  display: block;
+  padding: 3px 0
+}
+
+footer a:hover {
+  color: var(--brand)
+}
+
+.fbrand {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px
+}
+
+.fbrand img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  flex: none
+}
+
+.fbrand p {
+  margin: 2px 0 0
+}
+
+.fbrand b {
+  margin-bottom: 0
+}
+
+.copy {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 12px;
+  padding-top: 10px
+}
+
+.bnav {
+  display: none
+}
 
 /* =====================================================
    RESPONSIVE
    ===================================================== */
-@media (min-width:1500px) { main, .menu { max-width: 1400px } }
-@media (min-width:1920px) { main, .menu { max-width: 1560px } }
-@media (min-width:2200px) { main, .menu { max-width: 1800px } }
+@media (min-width:1500px) {
+
+  main,
+  .menu {
+    max-width: 1400px
+  }
+}
+
+@media (min-width:1920px) {
+
+  main,
+  .menu {
+    max-width: 1560px
+  }
+}
+
+@media (min-width:2200px) {
+
+  main,
+  .menu {
+    max-width: 1800px
+  }
+}
 
 @media (max-width:1100px) {
-  .side { width: 72px }
-  .side a { font-size: 11px }
-  .nav-link { padding: 0 12px }
-  .ban span { white-space: normal }
+  .side {
+    width: 72px
+  }
+
+  .side a {
+    font-size: 11px
+  }
+
+  .nav-link {
+    padding: 0 12px
+  }
+
+  .ban span {
+    white-space: normal
+  }
 }
 
 @media (max-width:900px) {
-  .grid2 { grid-template-columns: 1fr }
+  .grid2 {
+    grid-template-columns: 1fr
+  }
+
   .top {
     flex-wrap: wrap;
     gap: 10px 12px;
     padding: 10px max(14px, env(safe-area-inset-right, 0px)) 10px max(14px, env(safe-area-inset-left, 0px));
     padding-top: calc(10px + env(safe-area-inset-top, 0px))
   }
-  .logo { flex: 1 1 auto }
-  .search { order: 3; flex: 1 1 100%; max-width: none; margin: 0 }
-  main { padding: 20px 20px 48px }
-  .menu { padding: 0 8px }
-  .cta h3 { font-size: 18px }
+
+  .logo {
+    flex: 1 1 auto
+  }
+
+  .search {
+    order: 3;
+    flex: 1 1 100%;
+    max-width: none;
+    margin: 0
+  }
+
+  main {
+    padding: 20px 20px 48px
+  }
+
+  .menu {
+    padding: 0 8px
+  }
+
+  .cta h3 {
+    font-size: 18px
+  }
 }
 
 @media (max-width:720px) {
-  .side { display: none }
-  main { padding: 16px 16px 96px }
-  .notice, .banners { margin-bottom: 16px }
-  .grid2, .left { gap: 16px }
-  .sec, .cta { margin-top: 20px }
-  footer { margin-top: 28px }
+  .side {
+    display: none
+  }
+
+  main {
+    padding: 16px 16px 96px
+  }
+
+  .notice,
+  .banners {
+    margin-bottom: 16px
+  }
+
+  .grid2,
+  .left {
+    gap: 16px
+  }
+
+  .sec,
+  .cta {
+    margin-top: 20px
+  }
+
+  footer {
+    margin-top: 28px
+  }
 
   .bnav {
     display: flex;
@@ -827,95 +1298,308 @@ footer a:hover { color: var(--brand) }
     z-index: 30
   }
 
-  .bnav a { flex: 1; min-width: 0; font-size: 11px; font-weight: 600; color: var(--muted); text-align: center }
-  .bnav a.on { color: var(--brand) }
-  .bnav svg { display: block; margin: 0 auto 2px }
-  .pill { padding: 7px 14px; font-size: 13px }
+  .bnav a {
+    flex: 1;
+    min-width: 0;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    text-align: center
+  }
+
+  .bnav a.on {
+    color: var(--brand)
+  }
+
+  .bnav svg {
+    display: block;
+    margin: 0 auto 2px
+  }
+
+  .pill {
+    padding: 7px 14px;
+    font-size: 13px
+  }
 }
 
 @media (max-width:600px) {
-  .banners { grid-template-columns: 1fr }
-  .ban span { white-space: normal }
-  .cta { flex-direction: column; align-items: stretch }
-  .cta > .btn, .cta-btns { width: 100% }
-  .cta-btns .btn { flex: 1 1 140px }
-  .card h2 { flex-wrap: wrap }
-  .cal { width: 46px; height: 46px }
-  .feed-head h2 { font-size: 20px }
-  .feed-fields { grid-template-columns: 1fr }
-  .sel-exam, .go { grid-column: auto }
-  .go { justify-self: stretch }
-  .sel select { height: 48px; font-size: 16px }
+  .banners {
+    grid-template-columns: 1fr
+  }
+
+  .ban span {
+    white-space: normal
+  }
+
+  .cta {
+    flex-direction: column;
+    align-items: stretch
+  }
+
+  .cta>.btn,
+  .cta-btns {
+    width: 100%
+  }
+
+  .cta-btns .btn {
+    flex: 1 1 140px
+  }
+
+  .card h2 {
+    flex-wrap: wrap
+  }
+
+  .cal {
+    width: 46px;
+    height: 46px
+  }
+
+  .feed-head h2 {
+    font-size: 20px
+  }
+
+  .feed-fields {
+    grid-template-columns: 1fr
+  }
+
+  .sel-exam,
+  .go {
+    grid-column: auto
+  }
+
+  .go {
+    justify-self: stretch
+  }
+
+  .sel select {
+    height: 48px;
+    font-size: 16px
+  }
 }
 
 @media (max-width:480px) {
-  .logo { font-size: 17px }
-  .logo img { width: 30px; height: 30px }
-  .btn { padding: 9px 14px; font-size: 14px }
-  .card { padding: 16px }
-  .tests { grid-template-columns: 1fr }
-  .cta { padding: 18px }
-  .cta h3 { font-size: 17px }
-  .actions { gap: 6px }
-  .pill { padding: 6px 12px; font-size: 12.5px }
-  .nav-link { height: 46px; font-size: 13px; padding: 0 12px }
-  .banners, .row { gap: 10px }
-  .notice { font-size: 13px; padding: 8px 10px; gap: 8px }
-  .notice p { text-wrap: balance }
-  .cta-logo { width: 44px; height: 44px }
-  .dd a { padding: 12px 14px }
-  footer { grid-template-columns: 1fr 1fr; gap: 18px }
-  footer > div:first-child, .copy { grid-column: 1 / -1 }
-  .feed-card { padding: 18px 14px }
-  .ev { margin: 10px 12px }
-  .events h2 { padding: 14px }
-  .ev-foot { flex-wrap: wrap; gap: 10px }
+  .logo {
+    font-size: 17px
+  }
+
+  .logo img {
+    width: 30px;
+    height: 30px
+  }
+
+  .btn {
+    padding: 9px 14px;
+    font-size: 14px
+  }
+
+  .card {
+    padding: 16px
+  }
+
+  .tests {
+    grid-template-columns: 1fr
+  }
+
+  .cta {
+    padding: 18px
+  }
+
+  .cta h3 {
+    font-size: 17px
+  }
+
+  .actions {
+    gap: 6px
+  }
+
+  .pill {
+    padding: 6px 12px;
+    font-size: 12.5px
+  }
+
+  .nav-link {
+    height: 46px;
+    font-size: 13px;
+    padding: 0 12px
+  }
+
+  .banners,
+  .row {
+    gap: 10px
+  }
+
+  .notice {
+    font-size: 13px;
+    padding: 8px 10px;
+    gap: 8px
+  }
+
+  .notice p {
+    text-wrap: balance
+  }
+
+  .cta-logo {
+    width: 44px;
+    height: 44px
+  }
+
+  .dd a {
+    padding: 12px 14px
+  }
+
+  footer {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px
+  }
+
+  footer>div:first-child,
+  .copy {
+    grid-column: 1 / -1
+  }
+
+  .feed-card {
+    padding: 18px 14px
+  }
+
+  .ev {
+    margin: 10px 12px
+  }
+
+  .events h2 {
+    padding: 14px
+  }
+
+  .ev-foot {
+    flex-wrap: wrap;
+    gap: 10px
+  }
 }
 
 @media (max-width:380px) {
-  .cta-info { flex-wrap: wrap }
-  .item button { padding: 6px 12px }
+  .cta-info {
+    flex-wrap: wrap
+  }
+
+  .item button {
+    padding: 6px 12px
+  }
 }
 
 @media (max-width:360px) {
-  main { padding: 14px 12px 96px }
-  .logo { font-size: 15px; gap: 6px }
-  .logo img { width: 26px; height: 26px }
-  .pill { font-size: 11.5px; padding: 5px 10px }
-  .nav-link { font-size: 12.5px; padding: 0 10px }
-  .card { padding: 14px }
-  .item { padding: 14px }
-  .bnav a { font-size: 10px }
-  .cta-btns .btn { flex: 1 1 100% }
-  .feed-head h2 { font-size: 19px }
+  main {
+    padding: 14px 12px 96px
+  }
+
+  .logo {
+    font-size: 15px;
+    gap: 6px
+  }
+
+  .logo img {
+    width: 26px;
+    height: 26px
+  }
+
+  .pill {
+    font-size: 11.5px;
+    padding: 5px 10px
+  }
+
+  .nav-link {
+    font-size: 12.5px;
+    padding: 0 10px
+  }
+
+  .card {
+    padding: 14px
+  }
+
+  .item {
+    padding: 14px
+  }
+
+  .bnav a {
+    font-size: 10px
+  }
+
+  .cta-btns .btn {
+    flex: 1 1 100%
+  }
+
+  .feed-head h2 {
+    font-size: 19px
+  }
 }
 
 @media (max-width:320px) {
-  .logo span { display: none }
-  footer { grid-template-columns: 1fr }
-  .pill { font-size: 11px; padding: 5px 8px }
+  .logo span {
+    display: none
+  }
+
+  footer {
+    grid-template-columns: 1fr
+  }
+
+  .pill {
+    font-size: 11px;
+    padding: 5px 8px
+  }
 }
 
 @media (max-height:500px) and (orientation:landscape) {
-  .top { position: static }
-  .side { top: 0; height: var(--vh) }
-  .nav-link { height: 44px }
-  .bnav { padding-top: 4px; padding-bottom: calc(4px + env(safe-area-inset-bottom, 0px)) }
+  .top {
+    position: static
+  }
+
+  .side {
+    top: 0;
+    height: var(--vh)
+  }
+
+  .nav-link {
+    height: 44px
+  }
+
+  .bnav {
+    padding-top: 4px;
+    padding-bottom: calc(4px + env(safe-area-inset-bottom, 0px))
+  }
 }
 
 @media (pointer:coarse) {
-  .btn, .item button { min-height: 40px }
-  .actions .pill { min-height: 32px }
-  .dd a { min-height: 44px; display: flex; align-items: center }
-  .side a, .bnav a { min-height: 44px }
+
+  .btn,
+  .item button {
+    min-height: 40px
+  }
+
+  .actions .pill {
+    min-height: 32px
+  }
+
+  .dd a {
+    min-height: 44px;
+    display: flex;
+    align-items: center
+  }
+
+  .side a,
+  .bnav a {
+    min-height: 44px
+  }
 }
 
 @media (prefers-reduced-motion:reduce) {
-  * { transition: none !important; scroll-behavior: auto !important }
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important
+  }
 }
 
 /* ---------- Page protection (unchanged) ---------- */
-html.locked body > * { display: none !important }
+html.locked body>* {
+  display: none !important
+}
 
 html.locked body::before {
   content: "Developer tools detected. Close them to continue.";
@@ -928,4 +1612,48 @@ html.locked body::before {
   color: var(--brand)
 }
 
-@media print { body { display: none !important } }
+@media print {
+  body {
+    display: none !important
+  }
+}
+
+/* ---------- Banners: richer gradients with soft glow (from v2) ---------- */
+.ban {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a56db 0%, #0a1f4d 100%);
+  box-shadow: 0 10px 24px rgba(10, 31, 77, .18);
+  padding: 18px 16px
+}
+
+.ban::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .1);
+  pointer-events: none
+}
+
+.ban:nth-child(2) {
+  background: linear-gradient(135deg, #0e9f8a 0%, #064a41 100%)
+}
+
+.ban:nth-child(3) {
+  background: linear-gradient(135deg, #7048e8 0%, #2d1a78 100%)
+}
+
+.ban b {
+  font-size: 16px;
+  letter-spacing: -.2px
+}
+
+.ban u {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .18);
+  position: relative;
+  z-index: 1
+}
