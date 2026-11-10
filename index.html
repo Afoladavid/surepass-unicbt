@@ -38,7 +38,68 @@
       <a class="pill" href="#login">Login</a>
     </div>
   </header>
- 
+
+  <!-- MAIN NAV BAR WITH DROPDOWNS -->
+  <nav class="navbar" aria-label="Main sections">
+    <ul class="menu">
+      <li><a class="nav-link on" href="#home">Home</a></li>
+      <li><a class="nav-link" href="#news">News &amp; Updates</a></li>
+
+      <li class="has-dd">
+        <button type="button" class="nav-link dd-btn" aria-haspopup="true" aria-expanded="false"
+          aria-controls="dd-class">Classrooms<span class="badge">1</span><i class="chev"></i></button>
+        <ul class="dd" id="dd-class" hidden>
+          <li><a href="#practice">Practice Questions</a></li>
+          <li><a href="#challenge">Join a Practice Challenge</a></li>
+          <li><a href="#pdf">PDF Past Questions</a></li>
+          <li><a href="#tools">Study Tools</a></li>
+          <li><a href="#lessons">Watch Lessons</a></li>
+          <li><a href="#live">Live Classes</a></li>
+          <li><a href="#courses">Explore Courses</a></li>
+        </ul>
+      </li>
+
+      <li class="has-dd">
+        <button type="button" class="nav-link dd-btn" aria-haspopup="true" aria-expanded="false"
+          aria-controls="dd-exam">CBT Practice<i class="chev"></i></button>
+        <ul class="dd" id="dd-exam" hidden>
+          <li><a href="#uni">University CBT</a></li>
+          <li><a href="#jamb">JAMB CBT</a></li>
+          <li><a href="#waec">WAEC CBT</a></li>
+          <li><a href="#neco">NECO CBT</a></li>
+          <li><a href="#postutme">Post-UTME</a></li>
+
+        </ul>
+      </li>
+
+      <li class="has-dd">
+        <button type="button" class="nav-link dd-btn" aria-haspopup="true" aria-expanded="false"
+          aria-controls="dd-buy">Buy/Sell<i class="chev"></i></button>
+        <ul class="dd" id="dd-buy" hidden>
+          <li><a href="#store">SurePass Store</a></li>
+          <li><a href="#market">Marketplace</a></li>
+          <li><a href="#activation">Activation Codes</a></li>
+          <li><a href="#books">Textbooks &amp; Materials</a></li>
+          <li><a href="#sell">Sell an Item</a></li>
+          <li><a href="#agent">Become an Agent</a></li>
+        </ul>
+      </li>
+
+      <li class="has-dd">
+        <button type="button" class="nav-link dd-btn" aria-haspopup="true" aria-expanded="false"
+          aria-controls="dd-fun">Fun<i class="chev"></i></button>
+        <ul class="dd" id="dd-fun" hidden>
+          <li><a href="#quiz">Quiz Games</a></li>
+          <li><a href="#brain">Brain Teasers</a></li>
+          <li><a href="#leaderboard">Leaderboard</a></li>
+          <li><a href="#trivia">Daily Trivia</a></li>
+        </ul>
+      </li>
+
+      <li><a class="nav-link" href="#forums">Forums</a></li>
+      <li><a class="nav-link" href="#groups">Groups<span class="badge">1</span></a></li>
+    </ul>
+  </nav>
 
   <div class="shell">
     <!-- SIDEBAR -->
@@ -143,12 +204,7 @@
           <section class="feed" id="feed" aria-labelledby="feed-title">
             <div class="feed-head">
               <h2 id="feed-title">Your Feed</h2>
-              <button type="button" class="feed-btn" id="feed-reset">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M5 4v6M5 14v6M12 4v2M12 10v10M19 4v10M19 18v2M3 10h4M10 6h4M17 14h4" />
-                </svg>
-                Customise
-              </button>
+
             </div>
 
             <div class="feed-card">
@@ -210,8 +266,8 @@
           <h2>
             <span class="ev-title">
               <svg viewBox="0 0 24 24" aria-hidden="true">
-                <rect x="3" y="4" width="18" height="17" rx="3" />
-                <path d="M8 2v4M16 2v4M3 10h18" />
+                <path
+                  d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1a3 3 0 0 1 3 3v11a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h1V3a1 1 0 0 1 1-1zM4 10v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-8H4zm4 3h.01M12 13h.01M16 13h.01M8 16h.01M12 16h.01" />
               </svg>
               UPCOMING EVENTS
             </span>
@@ -220,7 +276,7 @@
 
           <article class="ev">
             <div class="ev-top">
-              <span class="cal"><em>10</em></span>
+              <span class="cal"><span class="cal-pg"><em>10</em></span></span>
               <div>
                 <span class="ev-tag">AFIT</span>
                 <b>AFIT holds orientation programme for new students</b>
@@ -236,7 +292,7 @@
 
           <article class="ev">
             <div class="ev-top">
-              <span class="cal"><em>11</em></span>
+              <span class="cal"><span class="cal-pg"><em>11</em></span></span>
               <div>
                 <span class="ev-tag">KWASU</span>
                 <b>KWASU holds qualifying exam for postgraduate students</b>
@@ -252,7 +308,7 @@
 
           <article class="ev">
             <div class="ev-top">
-              <span class="cal"><em>16</em></span>
+              <span class="cal"><span class="cal-pg"><em>16</em></span></span>
               <div>
                 <span class="ev-tag">FUGASHUA</span>
                 <b>FUGASHUA resumption date for 2026/2027 session</b>
