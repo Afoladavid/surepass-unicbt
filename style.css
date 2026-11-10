@@ -1,6 +1,6 @@
 /* SurePass CBT - styles (fully responsive)
-   Breakpoints: 1500+ large screens | 1100 small laptops | 900 tablets
-                720 phones (bottom bar) | 600 | 480 | 360 | 320 | landscape phones */
+   Breakpoints: 2200+ extra large | 1500+ large screens | 1100 small laptops | 900 tablets
+                720 phones (bottom bar) | 600 | 480 | 380 | 360 | 320 | landscape phones */
 :root {
   --bg: #fff;
   --surface: #fff;
@@ -249,10 +249,10 @@ ul {
   border: 0;
   background: none;
   color: var(--brand-d);
-  font-weight: 700;
-  font-size: 15px;
+  font-weight: 500;
+  font-size: 14px;
   white-space: nowrap;
-  border-bottom: 3px solid transparent;
+  border-bottom: 2px solid transparent;
   position: relative;
   transition: color .15s, background .15s
 }
@@ -266,7 +266,8 @@ ul {
 .nav-link.on,
 .dd-btn[aria-expanded="true"] {
   border-bottom-color: var(--brand);
-  color: var(--brand)
+  color: var(--brand);
+  font-weight: 500
 }
 
 .badge {
@@ -922,6 +923,14 @@ footer a:hover {
   }
 }
 
+@media (min-width:2200px) {
+
+  main,
+  .menu {
+    max-width: 1800px
+  }
+}
+
 /* Small laptops */
 @media (max-width:1100px) {
   .side {
@@ -978,6 +987,10 @@ footer a:hover {
 
   .cta h3 {
     font-size: 18px
+  }
+
+  .row {
+    grid-template-columns: repeat(auto-fill, minmax(min(210px, 100%), 1fr))
   }
 }
 
@@ -1041,7 +1054,7 @@ footer a:hover {
   }
 
   .pill {
-    padding: 8px 16px;
+    padding: 7px 14px;
     font-size: 13px
   }
 }
@@ -1050,6 +1063,10 @@ footer a:hover {
 @media (max-width:600px) {
   .banners {
     grid-template-columns: 1fr
+  }
+
+  .ban span {
+    white-space: normal
   }
 
   .cta {
@@ -1068,6 +1085,10 @@ footer a:hover {
 
   .cta-btns .btn {
     flex: 1 1 140px
+  }
+
+  .card h2 {
+    flex-wrap: wrap
   }
 }
 
@@ -1108,17 +1129,18 @@ footer a:hover {
   }
 
   .actions {
-    gap: 8px
+    gap: 6px
   }
 
   .pill {
-    padding: 8px 14px;
-    font-size: 13px
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 7px
   }
 
   .nav-link {
-    height: 50px;
-    font-size: 14px;
+    height: 48px;
+    font-size: 13px;
     padding: 0 12px
   }
 
@@ -1183,6 +1205,16 @@ footer a:hover {
 }
 
 /* Small phones */
+@media (max-width:380px) {
+  .cta-info {
+    flex-wrap: wrap
+  }
+
+  .item button {
+    padding: 6px 12px
+  }
+}
+
 @media (max-width:360px) {
   main {
     padding: 14px 12px 96px
@@ -1199,12 +1231,18 @@ footer a:hover {
   }
 
   .pill {
-    font-size: 12px;
-    padding: 7px 12px
+    font-size: 11.5px;
+    padding: 5px 10px;
+    border-radius: 6px
   }
 
   .actions {
-    gap: 6px
+    gap: 5px
+  }
+
+  .nav-link {
+    font-size: 12.5px;
+    padding: 0 10px
   }
 
   .notice {
@@ -1246,6 +1284,11 @@ footer a:hover {
   footer {
     grid-template-columns: 1fr
   }
+
+  .pill {
+    font-size: 11px;
+    padding: 5px 8px
+  }
 }
 
 /* Landscape phones and short windows: reclaim vertical space */
@@ -1269,13 +1312,16 @@ footer a:hover {
   }
 }
 
-/* Touch screens: comfortable tap targets */
+/* Touch screens: comfortable tap targets (header pills stay compact) */
 @media (pointer:coarse) {
 
-  .pill,
   .btn,
   .item button {
     min-height: 40px
+  }
+
+  .actions .pill {
+    min-height: 30px
   }
 
   .dd a {
