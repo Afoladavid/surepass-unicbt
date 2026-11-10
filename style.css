@@ -19,16 +19,10 @@
 }
 
 @supports (height: 100dvh) {
-  :root {
-    --vh: 100dvh
-  }
-
-  /* correct height on phones with moving browser bars */
+  :root { --vh: 100dvh }   /* correct height on phones with moving browser bars */
 }
 
-* {
-  box-sizing: border-box
-}
+* { box-sizing: border-box }
 
 html {
   height: 100%;
@@ -51,43 +45,18 @@ body {
   -webkit-touch-callout: none
 }
 
-input,
-textarea {
-  -webkit-user-select: text;
-  user-select: text
-}
+input, textarea { -webkit-user-select: text; user-select: text }
+img, svg, video { max-width: 100% }
+img { -webkit-user-drag: none; height: auto }
+a { color: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent }
+button { font: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent }
+ul { list-style: none; margin: 0; padding: 0 }
+:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px }
 
-img,
-svg,
-video {
-  max-width: 100%
-}
-
-img {
-  -webkit-user-drag: none;
-  height: auto
-}
-
-a {
-  color: inherit;
-  text-decoration: none
-}
-
-button {
-  font: inherit;
-  cursor: pointer
-}
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0
-}
-
-:focus-visible {
-  outline: 2px solid var(--brand);
-  outline-offset: 2px
-}
+/* no outline or shadow on a tab after it is clicked/tapped (keyboard focus still shows) */
+.nav-link:focus:not(:focus-visible),
+.side a:focus:not(:focus-visible),
+.bnav a:focus:not(:focus-visible) { outline: none; box-shadow: none }
 
 /* ---------- Top header ---------- */
 .top {
@@ -115,11 +84,7 @@ ul {
   white-space: nowrap
 }
 
-.logo span {
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis
-}
+.logo span { min-width: 0; overflow: hidden; text-overflow: ellipsis }
 
 .logo img {
   width: 40px;
@@ -172,14 +137,13 @@ ul {
   font-weight: 600;
   font-size: 14px;
   padding: 9px 22px;
-  border-radius: 999px;
+  border-radius: 8px;
+  line-height: 1.2;
   white-space: nowrap;
   transition: background .15s
 }
 
-.pill:hover {
-  background: var(--brand-d)
-}
+.pill:hover { background: var(--brand-d) }
 
 .btn {
   border: 0;
@@ -191,14 +155,8 @@ ul {
   transition: background .15s
 }
 
-.btn:hover {
-  background: var(--brand-d)
-}
-
-.btn.ghost {
-  background: var(--brand-l);
-  color: var(--brand)
-}
+.btn:hover { background: var(--brand-d) }
+.btn.ghost { background: var(--brand-l); color: var(--brand) }
 
 /* ---------- Main nav bar (scrolls sideways when it does not fit) ---------- */
 .navbar {
@@ -220,14 +178,8 @@ ul {
   -webkit-overflow-scrolling: touch
 }
 
-.menu::-webkit-scrollbar {
-  display: none
-}
-
-.menu>li {
-  flex: none;
-  position: relative
-}
+.menu::-webkit-scrollbar { display: none }
+.menu > li { flex: none; position: relative }
 
 .nav-link {
   display: flex;
@@ -246,14 +198,9 @@ ul {
   transition: color .15s, background .15s
 }
 
-.nav-link:hover,
-.has-dd:hover>.dd-btn {
-  color: var(--brand);
-  background: var(--brand-l)
-}
+.nav-link:hover, .has-dd:hover > .dd-btn { color: var(--brand); background: var(--brand-l) }
 
-.nav-link.on,
-.dd-btn[aria-expanded="true"] {
+.nav-link.on, .dd-btn[aria-expanded="true"] {
   border-bottom-color: var(--brand);
   color: var(--brand)
 }
@@ -274,9 +221,7 @@ ul {
   padding: 0 4px
 }
 
-.dd-btn .badge {
-  right: 26px
-}
+.dd-btn .badge { right: 26px }
 
 .chev {
   width: 7px;
@@ -288,9 +233,7 @@ ul {
   transition: transform .15s
 }
 
-.dd-btn[aria-expanded="true"] .chev {
-  transform: rotate(-135deg) translateY(-2px)
-}
+.dd-btn[aria-expanded="true"] .chev { transform: rotate(-135deg) translateY(-2px) }
 
 /* dropdown panels (positioned by script.js so they are never clipped) */
 .dd {
@@ -309,9 +252,7 @@ ul {
   padding: 8px 0
 }
 
-.dd[hidden] {
-  display: none
-}
+.dd[hidden] { display: none }
 
 .dd a {
   display: block;
@@ -321,18 +262,10 @@ ul {
   color: var(--ink)
 }
 
-.dd a:hover,
-.dd a:focus-visible {
-  background: var(--brand-l);
-  color: var(--brand)
-}
+.dd a:hover, .dd a:focus-visible { background: var(--brand-l); color: var(--brand) }
 
 /* ---------- Layout ---------- */
-.shell {
-  display: flex;
-  min-height: calc(100vh - 120px);
-  min-height: calc(var(--vh) - 120px)
-}
+.shell { display: flex; min-height: calc(100vh - 120px); min-height: calc(var(--vh) - 120px) }
 
 .side {
   width: 92px;
@@ -349,12 +282,9 @@ ul {
   scrollbar-width: none
 }
 
-.side::-webkit-scrollbar {
-  display: none
-}
+.side::-webkit-scrollbar { display: none }
 
-.side svg,
-.bnav svg {
+.side svg, .bnav svg {
   width: 22px;
   height: 22px;
   fill: none;
@@ -375,9 +305,7 @@ ul {
   color: var(--muted)
 }
 
-.side a:hover {
-  color: var(--brand)
-}
+.side a:hover { color: var(--brand) }
 
 .side a span {
   width: 40px;
@@ -389,25 +317,16 @@ ul {
   transition: background .15s
 }
 
-.side a:hover span {
-  background: var(--brand-l)
-}
-
-.side a.on {
-  color: var(--ink)
-}
+.side a:hover span { background: var(--brand-l) }
+.side a.on { color: var(--ink) }
 
 .side a.on span {
-  background: var(--surface);
+  background: var(--brand-l);
   color: var(--brand);
-  box-shadow: 0 0 0 1px var(--line)
+  box-shadow: none
 }
 
-.side hr {
-  border: 0;
-  border-top: 1px solid var(--line);
-  margin: 8px 14px
-}
+.side hr { border: 0; border-top: 1px solid var(--line); margin: 8px 14px }
 
 main {
   flex: 1;
@@ -428,17 +347,14 @@ main {
   background: #f1f7ff;
   border: 1px solid #d3e6fb;
   border-left: 4px solid var(--brand);
-  border-radius: 12px;
+  border-radius: 10px;
   color: #0b3a5e;
   font-weight: 600;
   font-size: 15px;
   line-height: 1.4
 }
 
-.notice p {
-  margin: 0;
-  min-width: 0
-}
+.notice p { margin: 0; min-width: 0 }
 
 .notice-ic {
   width: 28px;
@@ -465,21 +381,12 @@ main {
 }
 
 @keyframes excl {
-
-  0%,
-  100% {
-    background: var(--brand)
-  }
-
-  50% {
-    background: #e5342f
-  }
+  0%, 100% { background: var(--brand) }
+  50% { background: #e5342f }
 }
 
 @media (prefers-reduced-motion:reduce) {
-  .notice-ic b {
-    animation: none
-  }
+  .notice-ic b { animation: none }
 }
 
 /* ---------- Compact banners ---------- */
@@ -501,18 +408,9 @@ main {
   column-gap: 8px
 }
 
-.ban:nth-child(2) {
-  background: linear-gradient(135deg, #0e7a6b, #0a5a50)
-}
-
-.ban:nth-child(3) {
-  background: linear-gradient(135deg, #6a3fd6, #4a29a8)
-}
-
-.ban b {
-  font-size: 14px;
-  line-height: 1.2
-}
+.ban:nth-child(2) { background: linear-gradient(135deg, #0e7a6b, #0a5a50) }
+.ban:nth-child(3) { background: linear-gradient(135deg, #6a3fd6, #4a29a8) }
+.ban b { font-size: 14px; line-height: 1.2 }
 
 .ban span {
   grid-column: 1;
@@ -564,21 +462,11 @@ main {
   gap: 10px
 }
 
-.card h2 a {
-  font-size: 12px;
-  color: var(--brand);
-  font-weight: 500;
-  white-space: nowrap
-}
+.card h2 a { font-size: 12px; color: var(--brand); font-weight: 500; white-space: nowrap }
 
 /* Take a test: compact */
-#test {
-  padding: 14px 16px
-}
-
-#test h2 {
-  margin-bottom: 12px
-}
+#test { padding: 14px 16px }
+#test h2 { margin-bottom: 12px }
 
 .tests {
   display: grid;
@@ -596,21 +484,10 @@ main {
   transition: box-shadow .15s
 }
 
-.test:hover {
-  box-shadow: 0 3px 10px rgba(20, 80, 214, .12)
-}
-
-.test:nth-child(2) {
-  background: #e5f4f1
-}
-
-.test:nth-child(3) {
-  background: #efeafb
-}
-
-.test:nth-child(4) {
-  background: #fdf0e1
-}
+.test:hover { box-shadow: 0 3px 10px rgba(20, 80, 214, .12) }
+.test:nth-child(2) { background: #e5f4f1 }
+.test:nth-child(3) { background: #efeafb }
+.test:nth-child(4) { background: #fdf0e1 }
 
 .test i {
   width: 34px;
@@ -625,9 +502,7 @@ main {
   flex: none
 }
 
-.test div {
-  min-width: 0
-}
+.test div { min-width: 0 }
 
 .test b {
   display: block;
@@ -655,13 +530,8 @@ main {
   margin-bottom: 10px
 }
 
-.ev:last-child {
-  margin-bottom: 0
-}
-
-.ev div {
-  min-width: 0
-}
+.ev:last-child { margin-bottom: 0 }
+.ev div { min-width: 0 }
 
 .ev i {
   width: 44px;
@@ -676,20 +546,10 @@ main {
   flex: none
 }
 
-.ev small {
-  color: var(--brand);
-  font-weight: 700
-}
+.ev small { color: var(--brand); font-weight: 700 }
+.ev b { display: block; font-size: 14px; line-height: 1.3 }
 
-.ev b {
-  display: block;
-  font-size: 14px;
-  line-height: 1.3
-}
-
-.sec {
-  margin-top: 36px
-}
+.sec { margin-top: 36px }
 
 .row {
   display: grid;
@@ -720,10 +580,7 @@ main {
   color: #e5342f
 }
 
-.item b {
-  font-size: 15px;
-  line-height: 1.3
-}
+.item b { font-size: 15px; line-height: 1.3 }
 
 .tag {
   align-self: flex-start;
@@ -743,9 +600,7 @@ main {
   margin-top: auto
 }
 
-.item strong {
-  font-size: 15px
-}
+.item strong { font-size: 15px }
 
 .item button {
   border: 1px solid var(--line);
@@ -758,9 +613,7 @@ main {
   transition: background .15s
 }
 
-.item button:hover {
-  background: var(--brand-l)
-}
+.item button:hover { background: var(--brand-l) }
 
 .cta {
   margin-top: 36px;
@@ -774,31 +627,11 @@ main {
   flex-wrap: wrap
 }
 
-.cta h3 {
-  margin: 0 0 4px;
-  font-size: 20px
-}
-
-.cta p {
-  margin: 0;
-  color: var(--muted)
-}
-
-.cta-blue {
-  background: var(--brand);
-  color: #fff
-}
-
-.cta-blue p {
-  color: #dbe6ff
-}
-
-.cta-info {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  min-width: 0
-}
+.cta h3 { margin: 0 0 4px; font-size: 20px }
+.cta p { margin: 0; color: var(--muted) }
+.cta-blue { background: var(--brand); color: #fff }
+.cta-blue p { color: #dbe6ff }
+.cta-info { display: flex; align-items: center; gap: 14px; min-width: 0 }
 
 .cta-logo {
   width: 56px;
@@ -808,28 +641,11 @@ main {
   border-radius: 12px
 }
 
-.cta-btns {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap
-}
-
-.btn-white {
-  background: #fff;
-  color: var(--brand-d)
-}
-
-.btn-white:hover {
-  background: var(--brand-l)
-}
-
-.btn-dark {
-  background: var(--brand-d)
-}
-
-.btn-dark:hover {
-  background: #082b80
-}
+.cta-btns { display: flex; gap: 10px; flex-wrap: wrap }
+.btn-white { background: #fff; color: var(--brand-d) }
+.btn-white:hover { background: var(--brand-l) }
+.btn-dark { background: var(--brand-d) }
+.btn-dark:hover { background: #082b80 }
 
 footer {
   margin-top: 48px;
@@ -842,53 +658,18 @@ footer {
   color: var(--muted)
 }
 
-footer b {
-  color: var(--ink);
-  display: block;
-  margin-bottom: 8px
-}
+footer b { color: var(--ink); display: block; margin-bottom: 8px }
+footer a { display: block; padding: 3px 0 }
+footer a:hover { color: var(--brand) }
 
-footer a {
-  display: block;
-  padding: 3px 0
-}
+.fbrand { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px }
+.fbrand img { width: 36px; height: 36px; object-fit: contain; flex: none }
+.fbrand p { margin: 2px 0 0 }
+.fbrand b { margin-bottom: 0 }
 
-footer a:hover {
-  color: var(--brand)
-}
+.copy { grid-column: 1/-1; text-align: center; font-size: 12px; padding-top: 10px }
 
-.fbrand {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 8px
-}
-
-.fbrand img {
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
-  flex: none
-}
-
-.fbrand p {
-  margin: 2px 0 0
-}
-
-.fbrand b {
-  margin-bottom: 0
-}
-
-.copy {
-  grid-column: 1/-1;
-  text-align: center;
-  font-size: 12px;
-  padding-top: 10px
-}
-
-.bnav {
-  display: none
-}
+.bnav { display: none }
 
 /* =====================================================
    RESPONSIVE
@@ -896,47 +677,24 @@ footer a:hover {
 
 /* Large and ultra-wide screens */
 @media (min-width:1500px) {
-
-  main,
-  .menu {
-    max-width: 1400px
-  }
+  main, .menu { max-width: 1400px }
 }
 
 @media (min-width:1920px) {
-
-  main,
-  .menu {
-    max-width: 1560px
-  }
+  main, .menu { max-width: 1560px }
 }
 
 /* Small laptops */
 @media (max-width:1100px) {
-  .side {
-    width: 76px
-  }
-
-  .side a {
-    font-size: 11px
-  }
-
-  .nav-link {
-    padding: 0 14px
-  }
-
-  .ban span {
-    white-space: normal
-  }
-
-  /* let banner text wrap instead of being cut */
+  .side { width: 76px }
+  .side a { font-size: 11px }
+  .nav-link { padding: 0 14px }
+  .ban span { white-space: normal }          /* let banner text wrap instead of being cut */
 }
 
 /* Tablets */
 @media (max-width:900px) {
-  .grid2 {
-    grid-template-columns: 1fr
-  }
+  .grid2 { grid-template-columns: 1fr }
 
   .top {
     flex-wrap: wrap;
@@ -945,58 +703,21 @@ footer a:hover {
     padding-top: calc(10px + env(safe-area-inset-top, 0px))
   }
 
-  .logo {
-    flex: 1 1 auto
-  }
-
-  .search {
-    order: 3;
-    flex: 1 1 100%;
-    max-width: none;
-    margin: 0
-  }
-
-  main {
-    padding: 20px 20px 48px
-  }
-
-  .menu {
-    justify-content: flex-start;
-    padding: 0 8px
-  }
-
-  .cta h3 {
-    font-size: 18px
-  }
+  .logo { flex: 1 1 auto }
+  .search { order: 3; flex: 1 1 100%; max-width: none; margin: 0 }
+  main { padding: 20px 20px 48px }
+  .menu { justify-content: flex-start; padding: 0 8px }
+  .cta h3 { font-size: 18px }
 }
 
 /* Phones: sidebar becomes the bottom bar */
 @media (max-width:720px) {
-  .side {
-    display: none
-  }
-
-  main {
-    padding: 16px 16px 96px
-  }
-
-  .notice,
-  .banners {
-    margin-bottom: 18px
-  }
-
-  .grid2 {
-    gap: 12px
-  }
-
-  .sec,
-  .cta {
-    margin-top: 24px
-  }
-
-  footer {
-    margin-top: 32px
-  }
+  .side { display: none }
+  main { padding: 16px 16px 96px }
+  .notice, .banners { margin-bottom: 18px }
+  .grid2 { gap: 12px }
+  .sec, .cta { margin-top: 24px }
+  footer { margin-top: 32px }
 
   .bnav {
     display: flex;
@@ -1011,259 +732,86 @@ footer a:hover {
     z-index: 30
   }
 
-  .bnav a {
-    flex: 1;
-    min-width: 0;
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--muted);
-    text-align: center
-  }
-
-  .bnav a.on {
-    color: var(--brand)
-  }
-
-  .bnav svg {
-    display: block;
-    margin: 0 auto 2px
-  }
-
-  .pill {
-    padding: 8px 16px;
-    font-size: 13px
-  }
+  .bnav a { flex: 1; min-width: 0; font-size: 11px; font-weight: 600; color: var(--muted); text-align: center }
+  .bnav a.on { color: var(--brand) }
+  .bnav svg { display: block; margin: 0 auto 2px }
+  .pill { padding: 8px 16px; font-size: 13px }
 }
 
 /* Large phones */
 @media (max-width:600px) {
-  .banners {
-    grid-template-columns: 1fr
-  }
-
-  .cta {
-    flex-direction: column;
-    align-items: stretch;
-    text-align: left
-  }
-
-  .cta>.btn {
-    width: 100%
-  }
-
-  .cta-btns {
-    width: 100%
-  }
-
-  .cta-btns .btn {
-    flex: 1 1 140px
-  }
+  .banners { grid-template-columns: 1fr }
+  .cta { flex-direction: column; align-items: stretch; text-align: left }
+  .cta > .btn { width: 100% }
+  .cta-btns { width: 100% }
+  .cta-btns .btn { flex: 1 1 140px }
 }
 
 /* Phones */
 @media (max-width:480px) {
-  .logo {
-    font-size: 17px
-  }
-
-  .logo img {
-    width: 30px;
-    height: 30px
-  }
-
-  .btn {
-    padding: 9px 14px;
-    font-size: 14px
-  }
-
-  .card {
-    padding: 16px
-  }
-
-  #test {
-    padding: 12px
-  }
-
-  .tests {
-    grid-template-columns: 1fr
-  }
-
-  .cta {
-    padding: 18px
-  }
-
-  .cta h3 {
-    font-size: 17px
-  }
-
-  .actions {
-    gap: 6px
-  }
-
-  .pill {
-    padding: 7px 12px
-  }
-
-  .nav-link {
-    height: 50px;
-    font-size: 14px;
-    padding: 0 12px
-  }
-
-  .banners {
-    gap: 8px
-  }
-
-  .ban b {
-    font-size: 13px
-  }
-
-  .ban span {
-    font-size: 10.5px
-  }
-
-  .notice {
-    font-size: 14px;
-    padding: 8px 12px;
-    gap: 10px
-  }
-
-  .cta-logo {
-    width: 44px;
-    height: 44px
-  }
-
-  .row {
-    gap: 12px
-  }
-
-  .dd a {
-    padding: 13px 20px
-  }
-
-  footer {
-    grid-template-columns: 1fr 1fr;
-    gap: 18px
-  }
-
-  footer>div:first-child,
-  .copy {
-    grid-column: 1/-1
-  }
+  .logo { font-size: 17px }
+  .logo img { width: 30px; height: 30px }
+  .btn { padding: 9px 14px; font-size: 14px }
+  .card { padding: 16px }
+  #test { padding: 12px }
+  .tests { grid-template-columns: 1fr }
+  .cta { padding: 18px }
+  .cta h3 { font-size: 17px }
+  .actions { gap: 8px }
+  .pill { padding: 8px 14px; font-size: 13px }
+  .nav-link { height: 50px; font-size: 14px; padding: 0 12px }
+  .banners { gap: 8px }
+  .ban b { font-size: 13px }
+  .ban span { font-size: 10.5px }
+  .notice { font-size: 13px; line-height: 1.35; padding: 8px 10px; gap: 8px; border-left-width: 3px; border-radius: 8px }
+  .notice-ic { width: 24px; height: 24px }
+  .notice-ic b { width: 16px; height: 16px; font-size: 10px }
+  .notice p { text-wrap: balance }
+  .cta-logo { width: 44px; height: 44px }
+  .row { gap: 12px }
+  .dd a { padding: 13px 20px }
+  footer { grid-template-columns: 1fr 1fr; gap: 18px }
+  footer > div:first-child, .copy { grid-column: 1/-1 }
 }
 
 /* Small phones */
 @media (max-width:360px) {
-  main {
-    padding: 14px 12px 96px
-  }
-
-  .logo {
-    font-size: 15px;
-    gap: 6px
-  }
-
-  .logo img {
-    width: 26px;
-    height: 26px
-  }
-
-  .pill {
-    font-size: 12px;
-    padding: 6px 10px
-  }
-
-  .actions {
-    gap: 4px
-  }
-
-  .notice {
-    font-size: 13px
-  }
-
-  .card {
-    padding: 14px
-  }
-
-  .card h2 {
-    font-size: 13px
-  }
-
-  .item {
-    padding: 14px
-  }
-
-  .item b {
-    font-size: 14px
-  }
-
-  .bnav a {
-    font-size: 10px
-  }
-
-  .cta-btns .btn {
-    flex: 1 1 100%
-  }
+  main { padding: 14px 12px 96px }
+  .logo { font-size: 15px; gap: 6px }
+  .logo img { width: 26px; height: 26px }
+  .pill { font-size: 12px; padding: 7px 12px }
+  .actions { gap: 6px }
+  .notice { font-size: 12.5px }
+  .card { padding: 14px }
+  .card h2 { font-size: 13px }
+  .item { padding: 14px }
+  .item b { font-size: 14px }
+  .bnav a { font-size: 10px }
+  .cta-btns .btn { flex: 1 1 100% }
 }
 
 /* Very small / folded screens */
 @media (max-width:320px) {
-  .logo span {
-    display: none
-  }
-
-  /* logo image alone, keeps the header on one line */
-  footer {
-    grid-template-columns: 1fr
-  }
+  .logo span { display: none }              /* logo image alone, keeps the header on one line */
+  footer { grid-template-columns: 1fr }
 }
 
 /* Landscape phones and short windows: reclaim vertical space */
 @media (max-height:500px) and (orientation:landscape) {
-  .top {
-    position: static
-  }
-
-  .side {
-    top: 0;
-    height: var(--vh)
-  }
-
-  .nav-link {
-    height: 44px
-  }
-
-  .bnav {
-    padding-top: 4px;
-    padding-bottom: calc(4px + env(safe-area-inset-bottom, 0px))
-  }
+  .top { position: static }
+  .side { top: 0; height: var(--vh) }
+  .nav-link { height: 44px }
+  .bnav { padding-top: 4px; padding-bottom: calc(4px + env(safe-area-inset-bottom, 0px)) }
 }
 
 /* Touch screens: comfortable tap targets */
 @media (pointer:coarse) {
-
-  .pill,
-  .btn,
-  .item button {
-    min-height: 40px
-  }
-
-  .dd a {
-    min-height: 44px;
-    display: flex;
-    align-items: center
-  }
-
-  .side a,
-  .bnav a {
-    min-height: 44px
-  }
+  .pill, .btn, .item button { min-height: 40px }
+  .dd a { min-height: 44px; display: flex; align-items: center }
+  .side a, .bnav a { min-height: 44px }
 }
 
 /* Respect "reduce motion" */
 @media (prefers-reduced-motion:reduce) {
-  * {
-    transition: none !important;
-    scroll-behavior: auto !important
-  }
+  * { transition: none !important; scroll-behavior: auto !important }
 }
